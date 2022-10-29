@@ -45,5 +45,35 @@ describe(description + ". Краштесты.", () => {
   it(`Возраст : очень большое число => null`, () => {
     expect(ageClassification(999999999)).toBe(null);
   });
+});
+
+
+square_equation_description = "Тест функции решения квадратного уровнения";
+describe(square_equation_description + ". Краштесты.", () => {
+  const customTester = {
+    asymmetricMatch: function (dataToTest) {
+
+    }
+  }
+  it("коефициенты: 1, -1, -6. Два корня уровнения", () => {
+    expect(square_equation(1, -1, -6)).toEqual([3, -2]);
+  });
+
+  it("коефициенты: 0, 0, 0. Решения нет", () => {
+    expect(square_equation(0, 0, 0)).toEqual(null);
+  });
+
+  it("коефициенты: 0, 0, 4. Решения нет", () => {
+    expect(square_equation(0, 0, 4)).toEqual(null);
+  });
+
+  it("коефициенты: 1, 0, 25. Решений нет", () => {
+    expect(square_equation(1, 0, 25)).toEqual(null);
+  });
+
+
+  it("коефициенты: 1, -4, 4. Один корень", () => {
+    expect(square_equation(1, -4, 4)).toEqual(jasmine.arrayContaining([2]));
+  });
 
 });
