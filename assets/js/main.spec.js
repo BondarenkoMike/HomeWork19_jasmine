@@ -30,7 +30,7 @@ describe(description, () => {
 
 
 describe(description + ". Краштесты.", () => {
-  it(`Возраст : как стоорка => null`, () => {
+  it(`Возраст : как строка => "молодой возраст"`, () => {
     expect(ageClassification("25")).toBe("молодой возраст");
   });
 
@@ -43,18 +43,13 @@ describe(description + ". Краштесты.", () => {
   });
 
   it(`Возраст : очень большое число => null`, () => {
-    expect(ageClassification(999999999)).toBe(null);
+    expect(ageClassification(9999999999999)).toBe(null);
   });
 });
 
 
 square_equation_description = "Тест функции решения квадратного уровнения";
 describe(square_equation_description + ". Краштесты.", () => {
-  const customTester = {
-    asymmetricMatch: function (dataToTest) {
-
-    }
-  }
   it("коефициенты: 1, -1, -6. Два корня уровнения", () => {
     expect(square_equation(1, -1, -6)).toEqual([3, -2]);
   });
